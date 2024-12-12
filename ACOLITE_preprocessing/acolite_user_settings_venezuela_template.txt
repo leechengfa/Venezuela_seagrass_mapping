@@ -1,0 +1,37 @@
+## ACOLITE settings
+## Written at 2024-05-31 10:36:51
+
+## path (use .SAFE)
+inputfile= <input_directory>
+output= <output_directory>
+new_path=None
+polygon=None
+
+## AC
+aerosol_correction=dark_spectrum
+dsf_aot_estimate=tiled
+
+## output l2w parameters
+l2w_parameters=Rrs_*,spm_nechad2016,spm_nechad2016_704,spm_nechad2016_740,tur_nechad2016,tur_nechad2016_704,tur_nechad2016_740
+
+## visualize first tests
+rgb_rhot=False
+rgb_rhos=False
+map_l2w=True
+
+##l2w masking
+l2w_mask_threshold=0.05
+l2w_mask_negative_rhow=True
+glint_correction=True
+l2w_mask=False
+
+## output resolution (S2 only 10, 20, or 60 m)
+s2_target_res=10
+
+## Glint correction
+dsf_residual_glint_correction=True
+
+## export Geotiff
+l2w_export_geotiff=True
+
+

@@ -1,0 +1,235 @@
+/* List of GEE Asset links
+ * 
+ * This script contains the publicly available assets produced during this study.
+ * They can be accessed on Google Earth Engine.
+ */
+
+// ---------------------
+// Areas of interest
+// ---------------------
+
+// Venezuelan EEZ, available from Marineregions.org
+var eez = ee.FeatureCollection('projects/ee-seagrass-venezuela/assets/AOI/Venezuela_EEZ');
+var aoi = ee.FeatureCollection('projects/ee-seagrass-venezuela/assets/AOI/Venezuela_reduced_AOI');
+
+// ---------------------
+// Bathymetry
+// ---------------------
+
+var gebco = ee.FeatureCollection('projects/ee-seagrass-venezuela/assets/Bathymetry/gebco_2023');
+var bathy_vho = ee.FeatureCollection('projects/ee-seagrass-venezuela/assets/Bathymetry/bathyfeb150mf_eduardo');
+
+// ---------------------
+// Masks
+// ---------------------
+
+var mask_shallow = ee.Image('projects/ee-seagrass-venezuela/assets/Masking/Shallow_mask');
+var mask_water = ee.Image('projects/ee-seagrass-venezuela/assets/Masking/Water_mask');
+
+// ---------------------
+// Point data
+// ---------------------
+
+// Visually interpreted
+var sand = ee.FeatureCollection('projects/ee-seagrass-venezuela/assets/Label/Visualinterpretation_Sand');
+var seagrass = ee.FeatureCollection('projects/ee-seagrass-venezuela/assets/Label/Visualinterpretation_Seagrass');
+var deepwater = ee.FeatureCollection('projects/ee-seagrass-venezuela/assets/Label/Visualinterpretation_Deepwater');
+var turbid = ee.FeatureCollection('projects/ee-seagrass-venezuela/assets/Label/Visualinterpretation_Turbid');
+
+// Sourced
+var ref_seagrass = ee.FeatureCollection('projects/ee-seagrass-venezuela/assets/Label/Reference_Seagrass');
+var ref_coral = ee.FeatureCollection('projects/ee-seagrass-venezuela/assets/Label/Reference_coral');
+
+// ---------------------
+// Composites
+// ---------------------
+
+// ACOLITE best image composites
+var acolite = ee.Image('projects/ee-seagrass-venezuela/assets/Composite_ACOLITE/Sentinel-2_ACOLITE_bestimage_2023');
+
+// Full archive (FA) composites
+var comp_fa_2017_2017 = ee.Image('projects/ee-seagrass-venezuela/assets/Composite_FA/Venezuela_L1C_Rrs_2017_2017_p10_aoi_masked_int');
+var comp_fa_2018_2018 = ee.Image('projects/ee-seagrass-venezuela/assets/Composite_FA/Venezuela_L1C_Rrs_2018_2018_p10_aoi_masked_int');
+var comp_fa_2019_2019 = ee.Image('projects/ee-seagrass-venezuela/assets/Composite_FA/Venezuela_L1C_Rrs_2019_2019_p10_aoi_masked_int');
+var comp_fa_2020_2020 = ee.Image('projects/ee-seagrass-venezuela/assets/Composite_FA/Venezuela_L1C_Rrs_2020_2020_p10_aoi_masked_int');
+var comp_fa_2021_2021 = ee.Image('projects/ee-seagrass-venezuela/assets/Composite_FA/Venezuela_L1C_Rrs_2021_2021_p10_aoi_masked_int');
+var comp_fa_2022_2022 = ee.Image('projects/ee-seagrass-venezuela/assets/Composite_FA/Venezuela_L1C_Rrs_2022_2022_p10_aoi_masked_int');
+var comp_fa_2023_2023 = ee.Image('projects/ee-seagrass-venezuela/assets/Composite_FA/Venezuela_L1C_Rrs_2023_2023_p10_aoi_masked_int');
+var comp_fa_2017_2023 = ee.Image('projects/ee-seagrass-venezuela/assets/Composite_FA/Venezuela_L1C_Rrs_2017_2023_p10_aoi_masked_int');
+
+// Cloud Score+ CS composites
+var comp_cs55_2022_2022 = ee.Image('projects/ee-seagrass-venezuela/assets/Composite_CS/Venezuela_L1C_Rrs_cs55_2022_2022_p10_aoi_masked_int');
+var comp_cs55_2022_2023 = ee.Image('projects/ee-seagrass-venezuela/assets/Composite_CS/Venezuela_L1C_Rrs_cs55_2022_2023_p10_aoi_masked_int');
+var comp_cs55_2023_2023 = ee.Image('projects/ee-seagrass-venezuela/assets/Composite_CS/Venezuela_L1C_Rrs_cs55_2023_2023_p10_aoi_masked_int');
+
+var comp_cs60_2022_2022 = ee.Image('projects/ee-seagrass-venezuela/assets/Composite_CS/Venezuela_L1C_Rrs_cs60_2022_2022_p10_aoi_masked_int');
+var comp_cs60_2022_2023 = ee.Image('projects/ee-seagrass-venezuela/assets/Composite_CS/Venezuela_L1C_Rrs_cs60_2022_2023_p10_aoi_masked_int');
+var comp_cs60_2023_2023 = ee.Image('projects/ee-seagrass-venezuela/assets/Composite_CS/Venezuela_L1C_Rrs_cs60_2023_2023_p10_aoi_masked_int');
+
+var comp_cs65_2022_2022 = ee.Image('projects/ee-seagrass-venezuela/assets/Composite_CS/Venezuela_L1C_Rrs_cs65_2022_2022_p10_aoi_masked_int');
+var comp_cs65_2022_2023 = ee.Image('projects/ee-seagrass-venezuela/assets/Composite_CS/Venezuela_L1C_Rrs_cs65_2022_2023_p10_aoi_masked_int');
+var comp_cs65_2023_2023 = ee.Image('projects/ee-seagrass-venezuela/assets/Composite_CS/Venezuela_L1C_Rrs_cs65_2023_2023_p10_aoi_masked_int');
+
+var comp_cs70_2022_2022 = ee.Image('projects/ee-seagrass-venezuela/assets/Composite_CS/Venezuela_L1C_Rrs_cs70_2022_2022_p10_aoi_masked_int');
+var comp_cs70_2022_2023 = ee.Image('projects/ee-seagrass-venezuela/assets/Composite_CS/Venezuela_L1C_Rrs_cs70_2022_2023_p10_aoi_masked_int');
+var comp_cs70_2023_2023 = ee.Image('projects/ee-seagrass-venezuela/assets/Composite_CS/Venezuela_L1C_Rrs_cs70_2023_2023_p10_aoi_masked_int');
+
+var comp_cs75_2022_2022 = ee.Image('projects/ee-seagrass-venezuela/assets/Composite_CS/Venezuela_L1C_Rrs_cs75_2022_2022_p10_aoi_masked_int');
+var comp_cs75_2022_2023 = ee.Image('projects/ee-seagrass-venezuela/assets/Composite_CS/Venezuela_L1C_Rrs_cs75_2022_2023_p10_aoi_masked_int');
+var comp_cs75_2023_2023 = ee.Image('projects/ee-seagrass-venezuela/assets/Composite_CS/Venezuela_L1C_Rrs_cs75_2023_2023_p10_aoi_masked_int');
+
+var comp_cs80_2022_2022 = ee.Image('projects/ee-seagrass-venezuela/assets/Composite_CS/Venezuela_L1C_Rrs_cs80_2022_2022_p10_aoi_masked_int');
+var comp_cs80_2022_2023 = ee.Image('projects/ee-seagrass-venezuela/assets/Composite_CS/Venezuela_L1C_Rrs_cs80_2022_2023_p10_aoi_masked_int');
+var comp_cs80_2023_2023 = ee.Image('projects/ee-seagrass-venezuela/assets/Composite_CS/Venezuela_L1C_Rrs_cs80_2023_2023_p10_aoi_masked_int');
+
+// Cloud Score+ CDF composites
+var comp_cdf55_2022_2022 = ee.Image('projects/ee-seagrass-venezuela/assets/Composite_CS/Venezuela_L1C_Rrs_cs_cdf55_2022_2022_p10_aoi_masked_int');
+var comp_cdf55_2022_2023 = ee.Image('projects/ee-seagrass-venezuela/assets/Composite_CS/Venezuela_L1C_Rrs_cs_cdf55_2022_2023_p10_aoi_masked_int');
+var comp_cdf55_2023_2023 = ee.Image('projects/ee-seagrass-venezuela/assets/Composite_CS/Venezuela_L1C_Rrs_cs_cdf55_2023_2023_p10_aoi_masked_int');
+
+var comp_cdf60_2022_2022 = ee.Image('projects/ee-seagrass-venezuela/assets/Composite_CS/Venezuela_L1C_Rrs_cs_cdf60_2022_2022_p10_aoi_masked_int');
+var comp_cdf60_2022_2023 = ee.Image('projects/ee-seagrass-venezuela/assets/Composite_CS/Venezuela_L1C_Rrs_cs_cdf60_2022_2023_p10_aoi_masked_int');
+var comp_cdf60_2023_2023 = ee.Image('projects/ee-seagrass-venezuela/assets/Composite_CS/Venezuela_L1C_Rrs_cs_cdf60_2023_2023_p10_aoi_masked_int');
+
+var comp_cdf65_2022_2022 = ee.Image('projects/ee-seagrass-venezuela/assets/Composite_CS/Venezuela_L1C_Rrs_cs_cdf65_2022_2022_p10_aoi_masked_int');
+var comp_cdf65_2022_2023 = ee.Image('projects/ee-seagrass-venezuela/assets/Composite_CS/Venezuela_L1C_Rrs_cs_cdf65_2022_2023_p10_aoi_masked_int');
+var comp_cdf65_2023_2023 = ee.Image('projects/ee-seagrass-venezuela/assets/Composite_CS/Venezuela_L1C_Rrs_cs_cdf65_2023_2023_p10_aoi_masked_int');
+
+var comp_cdf70_2022_2022 = ee.Image('projects/ee-seagrass-venezuela/assets/Composite_CS/Venezuela_L1C_Rrs_cs_cdf70_2022_2022_p10_aoi_masked_int');
+var comp_cdf70_2022_2023 = ee.Image('projects/ee-seagrass-venezuela/assets/Composite_CS/Venezuela_L1C_Rrs_cs_cdf70_2022_2023_p10_aoi_masked_int');
+var comp_cdf70_2023_2023 = ee.Image('projects/ee-seagrass-venezuela/assets/Composite_CS/Venezuela_L1C_Rrs_cs_cdf70_2023_2023_p10_aoi_masked_int');
+
+var comp_cdf75_2022_2022 = ee.Image('projects/ee-seagrass-venezuela/assets/Composite_CS/Venezuela_L1C_Rrs_cs_cdf75_2022_2022_p10_aoi_masked_int');
+var comp_cdf75_2022_2023 = ee.Image('projects/ee-seagrass-venezuela/assets/Composite_CS/Venezuela_L1C_Rrs_cs_cdf75_2022_2023_p10_aoi_masked_int');
+var comp_cdf75_2023_2023 = ee.Image('projects/ee-seagrass-venezuela/assets/Composite_CS/Venezuela_L1C_Rrs_cs_cdf75_2023_2023_p10_aoi_masked_int');
+
+var comp_cdf80_2022_2022 = ee.Image('projects/ee-seagrass-venezuela/assets/Composite_CS/Venezuela_L1C_Rrs_cs_cdf80_2022_2022_p10_aoi_masked_int');
+var comp_cdf80_2022_2023 = ee.Image('projects/ee-seagrass-venezuela/assets/Composite_CS/Venezuela_L1C_Rrs_cs_cdf80_2022_2023_p10_aoi_masked_int');
+var comp_cdf80_2023_2023 = ee.Image('projects/ee-seagrass-venezuela/assets/Composite_CS/Venezuela_L1C_Rrs_cs_cdf80_2023_2023_p10_aoi_masked_int');
+
+// ---------------------
+// Ensemble Map
+// ---------------------
+
+// ACOLITE
+var ens_acolite_modeBin_coastal = ee.Image('projects/ee-seagrass-venezuela/assets/Ensemble_ACOLITE/ModeBin_ACOLITE_coastal_2023');
+var ens_acolite_modeBin_openwater = ee.Image('projects/ee-seagrass-venezuela/assets/Ensemble_ACOLITE/ModeBin_ACOLITE_openWater_2023');
+var ens_acolite_F1optimised_coastal = ee.Image('projects/ee-seagrass-venezuela/assets/Ensemble_ACOLITE/Optimisation_ACOLITE_coastal_2023');
+var ens_acolite_F1optimised_openwater = ee.Image('projects/ee-seagrass-venezuela/assets/Ensemble_ACOLITE/Optimisation_ACOLITE_openWater_2023');
+
+// Full Archive (FA)
+var ens_fa_modeBin_coastal = ee.Image('projects/ee-seagrass-venezuela/assets/Ensemble_FA/ModeBin_Rrs_2017_2023_p10_coastal');
+var ens_fa_modeBin_openwater = ee.Image('projects/ee-seagrass-venezuela/assets/Ensemble_FA/ModeBin_Rrs_2017_2023_p10_openWater');
+var ens_fa_F1optimised_coastal = ee.Image('projects/ee-seagrass-venezuela/assets/Ensemble_FA/Optimisation_Rrs_2017_2023_p10_coastal');
+var ens_fa_F1optimised_openwater = ee.Image('projects/ee-seagrass-venezuela/assets/Ensemble_FA/Optimisation_Rrs_2017_2023_p10_openWater');
+
+// Cloud Score+ CS
+var ens_cs_modeBin_coastal = ee.Image('projects/ee-seagrass-venezuela/assets/Ensemble_CS/ModeBin_Rrs_cs75_2023_2023_p10_coastal');
+var ens_cs_modeBin_openwater = ee.Image('projects/ee-seagrass-venezuela/assets/Ensemble_CS/ModeBin_Rrs_cs75_2023_2023_p10_openWater');
+var ens_cs_F1optimised_coastal = ee.Image('projects/ee-seagrass-venezuela/assets/Ensemble_CS/Optimisation_cs75_Rrs_2023_2023_p10_coastal');
+var ens_cs_F1optimised_openwater = ee.Image('projects/ee-seagrass-venezuela/assets/Ensemble_CS/Optimisation_cs75_Rrs_2023_2023_p10_openWater');
+
+// Cloud Score+ CDF
+var ens_cdf_modeBin_coastal = ee.Image('projects/ee-seagrass-venezuela/assets/Ensemble_CS/ModeBin_Rrs_cs_cdf75_2023_2023_p10_coastal');
+var ens_cdf_modeBin_openwater = ee.Image('projects/ee-seagrass-venezuela/assets/Ensemble_CS/ModeBin_Rrs_cs_cdf75_2023_2023_p10_openWater');
+var ens_cdf_F1optimised_coastal = ee.Image('projects/ee-seagrass-venezuela/assets/Ensemble_CS/Optimisation_cs_cdf75_Rrs_2023_2023_p10_coastal');
+var ens_cdf_F1optimised_openwater = ee.Image('projects/ee-seagrass-venezuela/assets/Ensemble_CS/Optimisation_cs_cdf75_Rrs_2023_2023_p10_openWater');
+
+// ---------------------
+// Classification
+// ---------------------
+
+/* This section contains the single classification map outputs of the best performing/most representative combination and repeat (seed).
+ * For the purpose of brevity, only the pattern of the best combination and an example is provided.
+ * Viewers are encouraged to use the maps in the Ensemble Map section.
+ */
+
+// ACOLITE
+/* pattern: projects/ee-seagrass-venezuela/assets/Classification_ACOLITE/Classmap_L1C_ACOLITE_split5_<aoi>_2023_seed_<seed_no>
+ * where:
+ * aoi = 'coastal' or 'openWater'
+ * seedno = 0 - 19
+ */
+var eg_acolite_class_map = ee.Image('projects/ee-seagrass-venezuela/assets/Classification_ACOLITE/Classmap_L1C_ACOLITE_split5_coastal_2023_seed_0');
+
+// Full archive
+/* pattern: projects/ee-seagrass-venezuela/assets/Classification_FA/Classmap_L1C_5class_Rrs_<startyear>_<endyear>)_p10_<aoi>_2023_seed_<seed_no>
+ * where:
+ * startyear = 2017
+ * endyear = 2017
+ * aoi = 'coastal' or 'openWater'
+ * seedno = 0 - 19
+ */
+var eg_fa_class_map = ee.Image('projects/ee-seagrass-venezuela/assets/Classification_FA/Classmap_L1C_5class_Rrs_2017_2023_p10_coastal_seed_0');
+
+// Cloud Score+ CS
+/* pattern: projects/ee-seagrass-venezuela/assets/Classification_CS/Classmap_L1C_5class_Rrs_cs<threshold>_<startyear>_<endyear>)_p10_<aoi>_2023_seed_<seed_no>
+ * where:
+ * threshold = 75
+ * startyear = 2023
+ * endyear = 2023
+ * aoi = 'coastal' or 'openWater'
+ * seedno = 0 - 19
+ */
+var eg_cs_class_map = ee.Image('projects/ee-seagrass-venezuela/assets/Classification_CS/Classmap_L1C_5class_Rrs_cs75_2023_2023_p10_coastal_seed_0');
+
+// Cloud Score+ CDF
+/* pattern: projects/ee-seagrass-venezuela/assets/Classification_CS/Classmap_L1C_5class_Rrs_cs_cdf<threshold>_<startyear>_<endyear>)_p10_<aoi>_2023_seed_<seed_no>
+ * where:
+ * threshold = 75
+ * startyear = 2023
+ * endyear = 2023
+ * aoi = 'coastal' or 'openWater'
+ * seedno = 0 - 19
+ */
+var eg_cdf_class_map = ee.Image('projects/ee-seagrass-venezuela/assets/Classification_CS/Classmap_L1C_5class_Rrs_cs_cdf75_2023_2023_p10_coastal_seed_0');
+
+// ---------------------
+// ACOLITE single images
+// ---------------------
+
+/* This section contains the ACOLITE-processed single images, before the mosaicking.
+ * For the purpose of brevity, only a list of the product names are provided..
+ * Viewers are encouraged to use the ACOLITE mosaic in the Composites section.
+ */
+
+/* 
+ * projects/ee-seagrass-venezuela/assets/SingleImages_ACOLITE/S2A_MSI_2023_01_27_15_09_31_T19PFP
+ * projects/ee-seagrass-venezuela/assets/SingleImages_ACOLITE/S2A_MSI_2023_01_28_14_39_53_T20PPS
+ * projects/ee-seagrass-venezuela/assets/SingleImages_ACOLITE/S2A_MSI_2023_01_28_14_39_56_T20PNS
+ * projects/ee-seagrass-venezuela/assets/SingleImages_ACOLITE/S2A_MSI_2023_01_28_14_40_08_T20PPR
+ * projects/ee-seagrass-venezuela/assets/SingleImages_ACOLITE/S2A_MSI_2023_03_15_14_59_58_T19PHM
+ * projects/ee-seagrass-venezuela/assets/SingleImages_ACOLITE/S2A_MSI_2023_05_04_14_59_32_T19PHP
+ * projects/ee-seagrass-venezuela/assets/SingleImages_ACOLITE/S2A_MSI_2023_05_04_14_59_35_T19PGP
+ * projects/ee-seagrass-venezuela/assets/SingleImages_ACOLITE/S2A_MSI_2023_08_08_15_20_15_T19PBM
+ * projects/ee-seagrass-venezuela/assets/SingleImages_ACOLITE/S2A_MSI_2023_08_08_15_20_17_T18PZS
+ * projects/ee-seagrass-venezuela/assets/SingleImages_ACOLITE/S2A_MSI_2023_08_08_15_20_29_T19PBL
+ * projects/ee-seagrass-venezuela/assets/SingleImages_ACOLITE/S2A_MSI_2023_08_08_15_20_31_T18PZR
+ * projects/ee-seagrass-venezuela/assets/SingleImages_ACOLITE/S2A_MSI_2023_09_11_14_59_37_T19PHP
+ * projects/ee-seagrass-venezuela/assets/SingleImages_ACOLITE/S2A_MSI_2023_09_11_14_59_40_T19PGP
+ * projects/ee-seagrass-venezuela/assets/SingleImages_ACOLITE/S2A_MSI_2023_10_24_15_09_51_T19PEN
+ * projects/ee-seagrass-venezuela/assets/SingleImages_ACOLITE/S2A_MSI_2023_10_24_15_09_54_T19PDN
+ * projects/ee-seagrass-venezuela/assets/SingleImages_ACOLITE/S2A_MSI_2023_11_20_14_59_23_T20PLU
+ * projects/ee-seagrass-venezuela/assets/SingleImages_ACOLITE/S2A_MSI_2023_11_20_15_00_01_T19PGM
+ * projects/ee-seagrass-venezuela/assets/SingleImages_ACOLITE/S2A_MSI_2023_11_24_14_40_02_T20PQR
+ * projects/ee-seagrass-venezuela/assets/SingleImages_ACOLITE/S2A_MSI_2023_11_24_14_40_05_T20PPR
+ * projects/ee-seagrass-venezuela/assets/SingleImages_ACOLITE/S2A_MSI_2023_11_24_14_40_12_T20PRQ
+ * projects/ee-seagrass-venezuela/assets/SingleImages_ACOLITE/S2A_MSI_2023_11_24_14_40_14_T20PQQ
+ * projects/ee-seagrass-venezuela/assets/SingleImages_ACOLITE/S2A_MSI_2023_11_30_14_59_17_T20PLU
+ * projects/ee-seagrass-venezuela/assets/SingleImages_ACOLITE/S2B_MSI_2023_01_19_14_59_56_T20PKS
+ * projects/ee-seagrass-venezuela/assets/SingleImages_ACOLITE/S2B_MSI_2023_02_01_15_09_59_T19PFM
+ * projects/ee-seagrass-venezuela/assets/SingleImages_ACOLITE/S2B_MSI_2023_02_01_15_10_02_T19PEM
+ * projects/ee-seagrass-venezuela/assets/SingleImages_ACOLITE/S2B_MSI_2023_02_04_15_19_32_T19PDP
+ * projects/ee-seagrass-venezuela/assets/SingleImages_ACOLITE/S2B_MSI_2023_02_04_15_19_36_T19PCP
+ * projects/ee-seagrass-venezuela/assets/SingleImages_ACOLITE/S2B_MSI_2023_02_04_15_19_39_T19PBP
+ * projects/ee-seagrass-venezuela/assets/SingleImages_ACOLITE/S2B_MSI_2023_02_04_15_19_47_T19PDN
+ * projects/ee-seagrass-venezuela/assets/SingleImages_ACOLITE/S2B_MSI_2023_02_04_15_19_50_T19PCN
+ * projects/ee-seagrass-venezuela/assets/SingleImages_ACOLITE/S2B_MSI_2023_02_04_15_19_53_T19PBN
+ * projects/ee-seagrass-venezuela/assets/SingleImages_ACOLITE/S2B_MSI_2023_02_04_15_19_55_T18PZT
+ * projects/ee-seagrass-venezuela/assets/SingleImages_ACOLITE/S2B_MSI_2023_10_13_14_49_45_T20PMT
+ * projects/ee-seagrass-venezuela/assets/SingleImages_ACOLITE/S2B_MSI_2023_10_13_14_49_48_T20PLT
+ * projects/ee-seagrass-venezuela/assets/SingleImages_ACOLITE/S2B_MSI_2023_10_13_14_49_59_T20PMS
+ * projects/ee-seagrass-venezuela/assets/SingleImages_ACOLITE/S2B_MSI_2023_10_13_14_50_02_T20PLS
+ * projects/ee-seagrass-venezuela/assets/SingleImages_ACOLITE/S2B_MSI_2023_12_02_14_49_50_T20PNS
+ * projects/ee-seagrass-venezuela/assets/SingleImages_ACOLITE/S2B_MSI_2023_12_05_14_59_41_T20PKT
+ */
