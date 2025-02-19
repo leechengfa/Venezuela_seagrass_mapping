@@ -59,8 +59,6 @@ import_acolite <- function(file_name) {
   ## rename column names to match columns
   # manual, single approach to ensure that column name order wouldn't affect the renaming
   names(csv)[names(csv) == 'Overall.accuracy'] <- 'OA'
-  names(csv)[names(csv) == 'Producer.s.accuracy'] <- 'PA'
-  names(csv)[names(csv) == 'User.s.accuracy'] <- 'UA'
   names(csv)[names(csv) == 'Variable.importance'] <- 'feature_selected_list'
   names(csv)[names(csv) == 'TD_size'] <- 'td_size'
   names(csv)[names(csv) == 'VD_size'] <- 'vd_size'
